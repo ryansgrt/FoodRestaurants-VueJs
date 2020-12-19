@@ -225,3 +225,18 @@ h1, h2, h3, h4, h5, h6 {
     height: 300px;
     margin: -75px 0 0 -100px;
 }
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item.active {
+    font-weight: bold;
+    color: black;
+}
+
+
+.img-fluid {
+    border-radius: 15px;
+}

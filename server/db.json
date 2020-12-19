@@ -99,25 +99,26 @@
       "gambar": "lontong-opor-ayam.jpg"
     }
   ],
-  "keranjangs": [
+  "carts": [
     {
-      "jumlah_pemesanan": "1",
+      "jumlah_pemesanan": "2",
+      "keterangan": "a",
       "products": {
-        "id": 2,
-        "kode": "K-02",
-        "nama": "Nasi Goreng Telur",
-        "harga": 14000,
+        "id": 3,
+        "kode": "K-03",
+        "nama": "Nasi Rames",
+        "harga": 12000,
         "is_ready": true,
-        "gambar": "nasi-goreng-telor.jpg"
+        "gambar": "nasi-rames.jpg"
       },
-      "id": 1
+      "id": 2
     }
   ],
   "pesanans": [
     {
       "nama": "Afif",
       "noMeja": "3",
-      "keranjangs": [
+      "carts": [
         {
           "jumlah_pemesanan": "1",
           "keterangan": "Pedes",
@@ -145,6 +146,51 @@
         }
       ],
       "id": 1
+    },
+    {
+      "nama": "Riyan",
+      "noMeja": "1",
+      "carts": [
+        {
+          "jumlah_pemesanan": "1",
+          "products": {
+            "id": 2,
+            "kode": "K-02",
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg"
+          },
+          "id": 1
+        },
+        {
+          "jumlah_pemesanan": "2",
+          "keterangan": "a",
+          "products": {
+            "id": 3,
+            "kode": "K-03",
+            "nama": "Nasi Rames",
+            "harga": 12000,
+            "is_ready": true,
+            "gambar": "nasi-rames.jpg"
+          },
+          "id": 2
+        },
+        {
+          "jumlah_pemesanan": "2",
+          "keterangan": "pedas",
+          "products": {
+            "id": 3,
+            "kode": "K-03",
+            "nama": "Nasi Rames",
+            "harga": 12000,
+            "is_ready": true,
+            "gambar": "nasi-rames.jpg"
+          },
+          "id": 3
+        }
+      ],
+      "id": 2
     }
   ]
 }

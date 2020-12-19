@@ -24,13 +24,19 @@
             >
           </b-nav-form>
 
-          <b-navbar-nav>
-            <router-link class="nav-link" to="/cart"> 
-            <b-icon icon="cart-check-fill" aria-hidden="true"></b-icon> Cart
-            <span class="badge badge-success">0</span>
-            </router-link>
-        </b-navbar-nav>
+     
 
+<b-navbar-nav class="ml-auto">
+            <li class="nav-item">
+              <router-link class="nav-link" to="/cart">
+                Cart
+                <b-icon-bag></b-icon-bag>
+                <span
+                  class="badge badge-success ml-2"
+                >{{ updateCart ? updateCart.length : jumlah_pesanans.length }}</span>
+              </router-link>
+            </li>
+          </b-navbar-nav>
           <!-- <b-nav-item-dropdown text="Lang" right>
             <b-dropdown-item href="#">EN</b-dropdown-item>
             <b-dropdown-item href="#">ES</b-dropdown-item>
@@ -54,9 +60,27 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Navbar",
+  data() {
+    return {
+      jumlah_pesanans: [],
+    };
+  },
+  props: ["updateCart"],
+  methods: {
+    setJumlah(data) {
+      this.jumlah_pesanans = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:9000/carts")
+      .then((response) => this.setJumlah(response.data))
+      .catch((error) => console.log(error));
+  },
 };
 </script>
-<style>
-</style>
+
+<style></style>
