@@ -213,3 +213,15 @@ h1, h2, h3, h4, h5, h6 {
     left: 100%;
   }
 }
+
+.crop {
+    width: 345x;
+    height: 250px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
+}
