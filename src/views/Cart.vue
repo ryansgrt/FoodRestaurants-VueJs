@@ -22,8 +22,9 @@
       <div class="row">
         <div class="col">
           <h2>
+              <strong>My</strong>
             Cart
-            <strong>Saya</strong>
+            
           </h2>
           <div class="table-responsive mt-3">
             <table class="table">
@@ -34,9 +35,9 @@
                   <th scope="col">Makanan</th>
                   <th scope="col">Keterangan</th>
                   <th scope="col">Jumlah</th>
-                  <th scope="col">Harga</th>
-                  <th scope="col">Total Harga</th>
-                  <th scope="col">Hapus</th>
+                  <th scope="col">price</th>
+                  <th scope="col">Total price</th>
+                  <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,31 +45,31 @@
                   <th>{{index+1}}</th>
                   <td>
                     <img
-                      :src=" '../assets/images/' + cart.products.gambar "
+                      :src=" '../assets/images/' + cart.products.pictureFood "
                       class="img-fluid shadow"
                       width="250"
                     />
                   </td>
                   <td>
-                    <strong>{{ cart.products.nama }}</strong>
+                    <strong>{{ cart.products.foodName }}</strong>
                   </td>
                   <td>{{ cart.keterangan ? cart.keterangan : "-" }}</td>
                   <td>{{ cart.jumlah_pemesanan }}</td>
-                  <td align="right">Rp. {{ cart.products.harga }}</td>
+                  <td align="right">Rp. {{ cart.products.price }}</td>
                   <td align="right">
-                    <strong>Rp. {{ cart.products.harga*cart.jumlah_pemesanan }}</strong>
+                    <strong>Rp. {{ cart.products.price*cart.jumlah_pemesanan }}</strong>
                   </td>
                   <td align="center" class="text-danger">
-                    <b-icon-trash @click="hapusCart(cart.id)"></b-icon-trash>
+                    <b-icon-trash @click="deleteCart(cart.id)"></b-icon-trash>
                   </td>
                 </tr>
 
                 <tr>
                   <td colspan="6" align="right">
-                    <strong>Total Harga :</strong>
+                    <strong>Total price :</strong>
                   </td>
                   <td align="right">
-                    <strong>Rp. {{ totalHarga }}</strong>
+                    <strong>Rp. {{ totalprice }}</strong>
                   </td>
                   <td></td>
                 </tr>
@@ -83,16 +84,16 @@
         <div class="col-md-4">
           <form class="mt-4" v-on:submit.prevent>
             <div class="form-group">
-              <label for="nama">Nama :</label>
-              <input type="text" class="form-control" v-model="pesan.nama" />
+              <label for="foodName">Customer Name :</label>
+              <input type="text" class="form-control" v-model="order.customerName" />
             </div>
             <div class="form-group">
-              <label for="noMeja">Nomor Meja :</label>
-              <input type="text" class="form-control" v-model="pesan.noMeja" />
+              <label for="tableNumber">Table Number :</label>
+              <input type="text" class="form-control" v-model="order.tableNumber" />
             </div>
 
             <button type="submit" class="btn btn-success float-right" @click="checkout">
-              <b-icon-cart></b-icon-cart>Pesan
+              <b-icon-cart></b-icon-cart>Order
             </button>
           </form>
         </div>
@@ -112,18 +113,18 @@ export default {
   data() {
     return {
       carts: [],
-      pesan: {},
+      order: {},
     };
   },
   methods: {
     setcarts(data) {
       this.carts = data;
     },
-    hapusCart(id) {
+    deleteCart(id) {
       axios
         .delete("http://localhost:9000/carts/" + id)
         .then(() => {
-          this.$toast.error("Sukses Hapus cart", {
+          this.$toast.error("Success Delete cart", {
             type: "error",
             position: "top-right",
             duration: 3000,
@@ -138,19 +139,19 @@ export default {
         .catch((error) => console.log(error));
     },
     checkout() {
-      if (this.pesan.nama && this.pesan.noMeja) {
-        this.pesan.carts = this.carts;
+      if (this.order.customerName && this.order.tableNumber) {
+        this.order.carts = this.carts;
         axios
-          .post("http://localhost:9000/pesanans", this.pesan)
+          .post("http://localhost:9000/orders", this.order)
           .then(() => {
-            // Hapus Semua cart 
+            // Delete All cart 
             this.carts.map(function (item) {
               return axios
                 .delete("http://localhost:9000/carts/" + item.id)
                 .catch((error) => console.log(error));
             });
-            this.$router.push({ path: "/pesanan-sukses" });
-            this.$toast.success("Sukses Dipesan", {
+            this.$router.push({ path: "/order-success" });
+            this.$toast.success("Order Success", {
               type: "success",
               position: "top-right",
               duration: 3000,
@@ -159,7 +160,7 @@ export default {
           })
           .catch((err) => console.log(err));
       } else {
-        this.$toast.error("Nama dan Nomor Meja Harus diisi", {
+        this.$toast.error("Name and Table Number Must be filled", {
           type: "error",
           position: "top-right",
           duration: 3000,
@@ -175,9 +176,9 @@ export default {
       .catch((error) => console.log(error));
   },
   computed: {
-    totalHarga() {
+    totalprice() {
       return this.carts.reduce(function (items, data) {
-        return items + data.products.harga * data.jumlah_pemesanan;
+        return items + data.products.price * data.jumlah_pemesanan;
       }, 0);
     },
   },

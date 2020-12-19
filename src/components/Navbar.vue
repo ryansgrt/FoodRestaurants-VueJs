@@ -33,7 +33,7 @@
                 <b-icon-bag></b-icon-bag>
                 <span
                   class="badge badge-success ml-2"
-                >{{ updateCart ? updateCart.length : jumlah_pesanans.length }}</span>
+                >{{ updateCart ? updateCart.length : jumlah_orders.length }}</span>
               </router-link>
             </li>
           </b-navbar-nav>
@@ -65,13 +65,13 @@ export default {
   name: "Navbar",
   data() {
     return {
-      jumlah_pesanans: [],
+      jumlah_orders: [],
     };
   },
   props: ["updateCart"],
   methods: {
     setJumlah(data) {
-      this.jumlah_pesanans = data;
+      this.jumlah_orders = data;
     },
   },
   mounted() {

@@ -21,33 +21,33 @@
 
       <div class="row mt-3">
         <div class="col-md-6">
-          <img :src=" '../assets/images/' + product.gambar " class="img-fluid shadow" />
+          <img :src=" '../assets/images/' + product.pictureFood " class="img-fluid shadow" />
         </div>
         <div class="col-md-6">
           <h2>
-            <strong>{{ product.nama }}</strong>
+            <strong>{{ product.foodName }}</strong>
           </h2>
           <hr />
           <h4>
-            Harga :
-            <strong>Rp. {{ product.harga }}</strong>
+            price :
+            <strong>Rp. {{ product.price }}</strong>
           </h4>
           <form class="mt-4" v-on:submit.prevent>
             <div class="form-group">
-              <label for="jumlah_pemesanan">Jumlah Pesan</label>
-              <input type="number" class="form-control" v-model="pesan.jumlah_pemesanan" />
+              <label for="jumlah_pemesanan">Jumlah Order</label>
+              <input type="number" class="form-control" v-model="order.jumlah_pemesanan" />
             </div>
             <div class="form-group">
               <label for="keterangan">Keterangan</label>
               <textarea
-                v-model="pesan.keterangan"
+                v-model="order.keterangan"
                 class="form-control"
                 placeholder="Keterangan spt : Pedes, Nasi Setengah .."
               ></textarea>
             </div>
 
             <button type="submit" class="btn btn-success" @click="pemesanan">
-              <b-icon-cart></b-icon-cart>Pesan
+              <b-icon-cart></b-icon-cart>Order
             </button>
           </form>
         </div>
@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       product: {},
-      pesan: {},
+      order: {},
     };
   },
   methods: {
@@ -75,13 +75,13 @@ export default {
       this.product = data;
     },
     pemesanan() {
-      if (this.pesan.jumlah_pemesanan) {
-        this.pesan.products = this.product;
+      if (this.order.jumlah_pemesanan) {
+        this.order.products = this.product;
         axios
-          .post("http://localhost:9000/carts", this.pesan)
+          .post("http://localhost:9000/carts", this.order)
           .then(() => {
             this.$router.push({ path: "/cart"})
-            this.$toast.success("Sukses Masuk cart", {
+            this.$toast.success("successfully entered to cart", {
               type: "success",
               position: "top-right",
               duration: 3000,
@@ -90,7 +90,7 @@ export default {
           })
           .catch((err) => console.log(err));
       } else {
-        this.$toast.error("Jumlah Pesanan Harus diisi", {
+        this.$toast.error("Jumlah Orderan Harus diisi", {
           type: "error",
           position: "top-right",
           duration: 3000,

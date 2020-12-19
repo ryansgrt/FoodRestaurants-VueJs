@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Foods from '../views/Foods.vue'
 import FoodDetail from '../views/FoodDetail.vue'
 import Cart from '../views/Cart.vue'
+import OrderSuccess from '../views/OrderSuccess.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ Vue.use(VueRouter)
     path: '/cart',
     name: 'cart',
     component: Cart
+  },
+  {
+    path: '/order-success',
+    name: 'OrderSuccess',
+    component: OrderSuccess
   },
   {
     path: '/about',
