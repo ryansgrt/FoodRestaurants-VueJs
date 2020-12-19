@@ -5,6 +5,7 @@ import Foods from '../views/Foods.vue'
 import FoodDetail from '../views/FoodDetail.vue'
 import Cart from '../views/Cart.vue'
 import OrderSuccess from '../views/OrderSuccess.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ Vue.use(VueRouter)
     path: '/order-success',
     name: 'OrderSuccess',
     component: OrderSuccess
+  },
+  {
+    path: '*',
+    name: 'Not Found',
+    component: NotFound
   },
   {
     path: '/about',

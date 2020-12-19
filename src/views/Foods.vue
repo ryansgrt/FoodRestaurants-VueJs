@@ -19,7 +19,7 @@
               v-model="search"
               type="text"
               class="form-control"
-              placeholder="Cari Makanan Kesukaan Anda .."
+              placeholder="Find Your Favorite Food .."
               aria-label="Cari"
               aria-describedby="basic-addon1"
               @keyup="searchFood"
@@ -40,6 +40,9 @@
         </div>
       </div>
     </div>
+     <div>
+        <Footer/>
+    </div>
   </div>
 </template>
 
@@ -47,12 +50,14 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
 import CardProduct from "@/components/CardProduct.vue";
+import Footer from "@/components/Footer.vue";
 import axios from "axios";
 export default {
   name: "Foods",
   components: {
     Navbar,
     CardProduct,
+    Footer,
   },
   data() {
     return {

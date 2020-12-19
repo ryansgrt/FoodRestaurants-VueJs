@@ -6,7 +6,7 @@
       "foodName": "Sate Ayam",
       "price": 16000,
       "is_ready": true,
-      "pictureFood": "sate-ayam.jpg"
+      "foodPicture": "sate-ayam.jpg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "foodName": "Nasi Goreng Telur",
       "price": 14000,
       "is_ready": true,
-      "pictureFood": "nasi-goreng-telor.jpg"
+      "foodPicture": "nasi-goreng-telor.jpg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "foodName": "Nasi Rames",
       "price": 12000,
       "is_ready": true,
-      "pictureFood": "nasi-rames.jpg"
+      "foodPicture": "nasi-rames.jpg"
     }
   ],
   "products": [
@@ -32,7 +32,7 @@
       "foodName": "Sate Ayam",
       "price": 16000,
       "is_ready": true,
-      "pictureFood": "sate-ayam.jpg"
+      "foodPicture": "sate-ayam.jpg"
     },
     {
       "id": 2,
@@ -40,7 +40,7 @@
       "foodName": "Nasi Goreng Telur",
       "price": 14000,
       "is_ready": true,
-      "pictureFood": "nasi-goreng-telor.jpg"
+      "foodPicture": "nasi-goreng-telor.jpg"
     },
     {
       "id": 3,
@@ -48,7 +48,7 @@
       "foodName": "Nasi Rames",
       "price": 12000,
       "is_ready": true,
-      "pictureFood": "nasi-rames.jpg"
+      "foodPicture": "nasi-rames.jpg"
     },
     {
       "id": 4,
@@ -56,7 +56,7 @@
       "foodName": "Mie Ayam Bakso",
       "price": 14000,
       "is_ready": true,
-      "pictureFood": "mie-ayam-bakso.jpg"
+      "foodPicture": "mie-ayam-bakso.jpg"
     },
     {
       "id": 5,
@@ -64,7 +64,7 @@
       "foodName": "Mie Goreng",
       "price": 13000,
       "is_ready": true,
-      "pictureFood": "mie-goreng.jpg"
+      "foodPicture": "mie-goreng.jpg"
     },
     {
       "id": 6,
@@ -72,7 +72,7 @@
       "foodName": "Bakso",
       "price": 10000,
       "is_ready": true,
-      "pictureFood": "bakso.jpg"
+      "foodPicture": "bakso.jpg"
     },
     {
       "id": 7,
@@ -80,7 +80,7 @@
       "foodName": "Pangsit 6 pcs",
       "price": 5000,
       "is_ready": true,
-      "pictureFood": "pangsit.jpg"
+      "foodPicture": "pangsit.jpg"
     },
     {
       "id": 8,
@@ -88,7 +88,7 @@
       "foodName": "Kentang Goreng",
       "price": 5000,
       "is_ready": true,
-      "pictureFood": "kentang-goreng.jpg"
+      "foodPicture": "kentang-goreng.jpg"
     },
     {
       "id": 9,
@@ -96,24 +96,10 @@
       "foodName": "Lontong Opor Ayam",
       "price": 18000,
       "is_ready": true,
-      "pictureFood": "lontong-opor-ayam.jpg"
+      "foodPicture": "lontong-opor-ayam.jpg"
     }
   ],
-  "carts": [
-    {
-      "jumlah_pemesanan": "1",
-      "keterangan": "a",
-      "products": {
-        "id": 3,
-        "orderCode": "K-03",
-        "foodName": "Nasi Rames",
-        "price": 12000,
-        "is_ready": true,
-        "pictureFood": "nasi-rames.jpg"
-      },
-      "id": 1
-    }
-  ],
+  "carts": [],
   "orders": [
     {
       "foodName": "riyan",
@@ -128,12 +114,45 @@
             "foodName": "Nasi Rames",
             "price": 12000,
             "is_ready": true,
-            "pictureFood": "nasi-rames.jpg"
+            "foodPicture": "nasi-rames.jpg"
           },
           "id": 1
         }
       ],
       "id": 1
+    },
+    {
+      "customerName": "riyan",
+      "tableNumber": "1",
+      "carts": [
+        {
+          "jumlah_pemesanan": "1",
+          "keterangan": "a",
+          "products": {
+            "id": 3,
+            "orderCode": "K-03",
+            "foodName": "Nasi Rames",
+            "price": 12000,
+            "is_ready": true,
+            "foodPicture": "nasi-rames.jpg"
+          },
+          "id": 1
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "keterangan": "aa",
+          "products": {
+            "id": 2,
+            "orderCode": "K-02",
+            "foodName": "Nasi Goreng Telur",
+            "price": 14000,
+            "is_ready": true,
+            "foodPicture": "nasi-goreng-telor.jpg"
+          },
+          "id": 2
+        }
+      ],
+      "id": 2
     }
   ]
 }

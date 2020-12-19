@@ -21,7 +21,7 @@
 
       <div class="row mt-3">
         <div class="col-md-6">
-          <img :src=" '../assets/images/' + product.pictureFood " class="img-fluid shadow" />
+          <img :src=" '../assets/images/' + product.foodPicture " class="img-fluid shadow" />
         </div>
         <div class="col-md-6">
           <h2>
@@ -53,16 +53,21 @@
         </div>
       </div>
     </div>
+    <div>
+        <Footer/>
+    </div>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 import axios from "axios";
 export default {
   name: "FoodDetail",
   components: {
     Navbar,
+    Footer
   },
   data() {
     return {

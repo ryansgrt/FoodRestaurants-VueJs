@@ -24,6 +24,9 @@
         </div>
       </div>
     </div>
+        <div>
+        <Footer/>
+    </div>
   </div>
 </template>
 
@@ -31,6 +34,7 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
+import Footer from "@/components/Footer.vue";
 import CardProduct from "@/components/CardProduct.vue";
 import axios from "axios";
 export default {
@@ -39,6 +43,7 @@ export default {
     Navbar,
     Hero,
     CardProduct,
+    Footer,
   },
   data() {
     return {

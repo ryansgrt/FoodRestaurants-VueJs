@@ -45,7 +45,7 @@
                   <th>{{index+1}}</th>
                   <td>
                     <img
-                      :src=" '../assets/images/' + cart.products.pictureFood "
+                      :src=" '../assets/images/' + cart.products.foodPicture "
                       class="img-fluid shadow"
                       width="250"
                     />
@@ -99,16 +99,21 @@
         </div>
       </div>
     </div>
+    <div>
+        <Footer/>
+    </div>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-import axios from "axios";
+import Footer from "@/components/Footer.vue";
+import axios from "axios"
 export default {
-  name: "Cart",
+  name: "OrderSuccess",
   components: {
     Navbar,
+    Footer,
   },
   data() {
     return {
