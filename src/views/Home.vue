@@ -23,6 +23,9 @@
           <CardProduct :product="product"/>
         </div>
       </div>
+      <div>
+        <Carousel/>
+        </div>
     </div>
         <div>
         <Footer/>
@@ -36,6 +39,7 @@ import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
 import Footer from "@/components/Footer.vue";
 import CardProduct from "@/components/CardProduct.vue";
+
 import axios from "axios";
 export default {
   name: "Home",

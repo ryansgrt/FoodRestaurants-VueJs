@@ -6,6 +6,7 @@ import FoodDetail from '../views/FoodDetail.vue'
 import Cart from '../views/Cart.vue'
 import OrderSuccess from '../views/OrderSuccess.vue'
 import NotFound from '../views/NotFound.vue'
+import UnderMaintenance from '../views/UnderMaintenance.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,8 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { title: 'Skills - MyApp' } // <- I would to use this one
   },
   {
     path: '/foods',
@@ -39,6 +41,11 @@ Vue.use(VueRouter)
     path: '*',
     name: 'Not Found',
     component: NotFound
+  },
+  {
+    path: '/undermaintenance',
+    name: 'Not Found',
+    component: UnderMaintenance
   },
   {
     path: '/about',
